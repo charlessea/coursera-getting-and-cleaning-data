@@ -1,4 +1,4 @@
-Course Project - Getting and Cleaning Data
+##Course Project - Getting and Cleaning Data
 
 The goal of this project is to prepare tidy data that can be used for later analysis. To do that a dataset representing data collected from the accelerometers from the Samsung Galaxy S smartphone was used. This project contains an R file, named `run_analysis.r`, to do the following tasks:
 
