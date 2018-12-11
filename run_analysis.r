@@ -22,7 +22,7 @@ activitiesTrain <- read.table("UCI HAR DataSet/train/y_train.txt", stringsAsFact
 colnames(activitiesTrain) <- c("activity")
 train <- cbind(train, subjectsTrain, activitiesTrain)
 
-# Load, clean and prepare train dataset to bind train dataset
+# Load, clean and prepare test dataset to bind train dataset
 test <- read.table("UCI HAR DataSet/test/X_test.txt", stringsAsFactors=FALSE)[featuresIndexes]
 colnames(test) <- featuresNames
 subjectsTest <- read.table("UCI HAR DataSet/test/subject_test.txt", stringsAsFactors=FALSE)
@@ -46,4 +46,4 @@ groupedRepository <- group_by(oneRepository, activity, subject)
 tidyData <- summarise_at(groupedRepository, featuresNames, mean)
 
 # Write summarized data into text tidy file 
-write.table(tidyData, "UCI HAR DataSet/tidy_repository.txt")
+write.table(tidyData, file="UCI HAR DataSet/tidy_repository.txt", row.names=FALSE)
